@@ -1,0 +1,25 @@
+{
+  "name": "Spirits",
+  "version": "1.0.0",
+  "description": "tested",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dinhomac/2019231_Claudio_Costa-iaw-ca22.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dinhomac/2019231_Claudio_Costa-iaw-ca22/issues"
+  },
+  "homepage": "https://github.com/Dinhomac/2019231_Claudio_Costa-iaw-ca22#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.3"
+  }
+}

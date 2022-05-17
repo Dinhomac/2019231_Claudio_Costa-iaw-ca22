@@ -37,17 +37,17 @@ app.post('/add', async (req, res) => {
 
 // Create Task
 app.post('/delete', async (req, res) => {
-    const SpiritId = req.body.SpiritId;
-    console.log(SpiritId);
-    const deleted = await Spirit.deleteOne({ _id: SpiritId });
+    const spiritId = req.body.spiritId;
+    console.log(spiritId);
+    const deleted = await Spirit.deleteOne({ _id: spiritId });
 
     if(deleted.deletedCount == 1){
-        console.log('Spirit with id ' + SpiritId + ' has been deleted');
+        console.log('Spirit with id ' + spiritId + ' has been deleted');
         // refresh view
-        res.send('Spirit with id ' + SpiritId + ' has been deleted');
+        res.send('Spirit with id ' + spiritId + ' has been deleted');
     } else {
-        console.log('Spirit with id ' + SpiritId + ' has NOT been deleted and probs doesnt exist');
-        res.send('Spirit with id ' + SpiritId + ' has NOT been deleted and probs doesnt exist');
+        console.log('Spirit with id ' + spiritId + ' has NOT been deleted and probs doesnt exist');
+        res.send('Spirit with id ' + spiritId + ' has NOT been deleted and probs doesnt exist');
     }
 
     

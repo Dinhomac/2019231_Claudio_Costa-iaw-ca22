@@ -1,10 +1,6 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://ClaudioCCT2019231:SveHGsUyV2yYMmy@cluster0.evzxp.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect()
-    .then(() => client.db("spirits").collection("spirits")) 
-    .then(() => console.log('mongo db is ready.'))
-    .catch(e => console.log(e));
+const mongoose = require('mongoose');
+    //connect to db via DB's url
 
-
-
+    mongoose.connect("mongodb+srv://ClaudioCCT2019231:SveHGsUyV2yYMmy@cluster0.evzxp.mongodb.net/?retryWrites=true&w=majority",{useNewUrlParser:true})
+        .then(() => console.log('db connected hi mongon'))
+        .catch(e => console.log(e));

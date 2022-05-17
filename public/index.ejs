@@ -7,49 +7,84 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spirits Counter </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/litera/bootstrap.min.css">
+    <style>
+        .table th, .table td { min-width: 10em; padding: 0.75rem; vertical-align: top; border-top: 1px solid rgba(0,0,0,0.1); };
+        .parentTbl {
+            margin-left: 25em;
+        };
+        
+    </style>
 </head>
 
 <body>
 
     <div class="container p-5">
-        <div class="row">
+        <div>
+
+
+
+
+
+
             <div class="col-md-4 offset-md-4">
-                <form action="https://3000-dinhomac-2019231claudio-joqp3o0c9k4.ws-eu45.gitpod.io/add" method="POST" class="card card-body">
-                    <div class="form-group">
-                        <input type="text" name="spirit" placeholder="Insert a new Spirit" class="form-control" autofocus>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="description" placeholder="Write A Description" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="price" placeholder="insert price" class="form-control">
-                    </div>
-                    <button class="btn btn-primary">
-                        
-                    </button>
-                </form>
-
-                <% spirits.forEach(function (spirit) { %>
-                    <div class="card card-body mt-2">
-                        <div id="spiritId"><%= spirit._id %></div>
-                        <h5><%= spirit.spirit %> -  </h5>
-                        <p><%= spirit.description %></p>
-                        <p><%= spirit.price %></p>
-
-                            <h2>
-                                <strong>
-                                    <a class="btn btn-primary" href="https://guarded-hamlet-73165.herokuapp.com/?key=123" id="<%= spirit._id %>" onclick="deletespirit(this.id);">
-                                        X
-                                    </a>
-                                </strong>
-                            </h2>
-                    </div>
-                <% }) %>
+                <table id="#parentTbl" style="margin-left: -75%; .offset-md-4 { margin-left: 0; }">
+                    <tbody>
+                        <tr>
+                            <td style="min-width: 235px">
+                                <form action="https://40149-amethyst-ferret-8l8iximwp7b.ws-eu45.gitpod.io/add" method="POST" class="card card-body">
+                                    <div class="form-group">
+                                        <input type="text" name="spirit" placeholder="Insert a new Spirit" class="form-control" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="description" placeholder="Write A Description" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" name="price" placeholder="insert price" class="form-control">
+                                    </div>
+                                    <button class="btn btn-primary" onclick="alertR()">
+                                        Add Spirit
+                                    </button>
+                                </form>
+                            </td><td>
+                                <table class="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Spriti Name</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Price</th>
+                                      </tr>
+                                    </thead>
+                                        <tbody>
+                                            <% spirits.forEach(function (spirit) { %>
+                                                      <tr class="table-active"  scope="row">
+                                                        <td min-width: 10em><div id="spiritId"><%= spirit._id %></div></td>
+                                                        <td min-width: 10em><%= spirit.spirit %></td>
+                                                        <td min-width: 10em><%= spirit.description %></td>
+                                                        <td min-width: 10em><%= spirit.price %></td>
+                                                        <td min-width: 10em>
+                                                            <strong>
+                                                                <a class="btn btn-danger" href="https://40149-amethyst-ferret-8l8iximwp7b.ws-eu45.gitpod.io/?key=123" id="<%= spirit._id %>" onclick="deletespirit(this.id);">
+                                                                    Remove
+                                                                </a>
+                                                            </strong>
+                                                        </td>    
+                                                      </tr>
+                                            <% }) %>
+                                        </tbody>
+                            </table></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
             </div>
         </div>
     </div>
     <script>
-        //Have to use fetch as put and delete not supported in modern browsers in html
+        //Have to use fetch as 1put and delete not supported in modern browsers in html
+        alertR = () => {
+            alert('Spirit added!');
+        }
         function deletespirit (spiritId) {
             console.log('spirit deleted', spiritId);
 
@@ -67,7 +102,7 @@
               redirect: 'follow'
             };
 
-            fetch("https://guarded-hamlet-73165.herokuapp.com/delete", requestOptions)
+            fetch("https://40149-amethyst-ferret-8l8iximwp7b.ws-eu45.gitpod.io/delete", requestOptions)
               .then(response => response.text())
               .then(result => console.log(result))
               .catch(error => console.log('error', error));

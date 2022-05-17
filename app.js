@@ -43,9 +43,8 @@ app.post('/delete', async (req, res) => {
 
     if(deleted.deletedCount == 1){
         console.log('Spirit with id ' + SpiritId + ' has been deleted');
-        //refresh view
-        //res.send('Spirit with id ' + SpiritId + ' has been deleted');
-        res.redirect()
+        // refresh view
+        res.send('Spirit with id ' + SpiritId + ' has been deleted');
     } else {
         console.log('Spirit with id ' + SpiritId + ' has NOT been deleted and probs doesnt exist');
         res.send('Spirit with id ' + SpiritId + ' has NOT been deleted and probs doesnt exist');

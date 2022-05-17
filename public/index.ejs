@@ -38,7 +38,7 @@
 
                             <h2>
                                 <strong>
-                                    <a class="btn btn-primary" href="https://3000-dinhomac-2019231claudio-joqp3o0c9k4.ws-eu45.gitpod.io/?key=123" id="<%= spirit._id %>" onclick="deletespirit(this.id);">
+                                    <a class="btn btn-primary" href="https://guarded-hamlet-73165.herokuapp.com/?key=123" id="<%= spirit._id %>" onclick="deletespirit(this.id);">
                                         X
                                     </a>
                                 </strong>
@@ -67,7 +67,7 @@
               redirect: 'follow'
             };
 
-            fetch("https://3000-dinhomac-2019231claudio-joqp3o0c9k4.ws-eu45.gitpod.io/delete", requestOptions)
+            fetch("https://guarded-hamlet-73165.herokuapp.com/delete", requestOptions)
               .then(response => response.text())
               .then(result => console.log(result))
               .catch(error => console.log('error', error));

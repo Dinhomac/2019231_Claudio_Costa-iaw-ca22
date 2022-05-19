@@ -11,9 +11,9 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//Request root and respond with item Model Spirit (from models schema)
-//and if it exists based on db connected too we propagate and
-//return as array to index
+//It will make a request to the root and respond with item Model Spirit from the schema
+//if there is a connection with the db it will return the index 
+
 app.get('/', async (req, res) => {
     
     //if(req.query.key === "123"){

@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 
+//Creates the objects of the page
 const SpiritSchema = new Schema({
     spirit: {
         type: String,

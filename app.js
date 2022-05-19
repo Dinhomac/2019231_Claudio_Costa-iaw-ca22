@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
     
 })
 
-// Create Task
+// this command Creates a new item in the table
 app.post('/add', async (req, res) => {
     const newSpirit = new Spirit({
         spirit: req.body.spirit,
@@ -35,7 +35,7 @@ app.post('/add', async (req, res) => {
     res.redirect('/');
 })
 
-// Create Task
+// Delete one existing item from the table, it deletes from the database as well
 app.post('/delete', async (req, res) => {
     const spiritId = req.body.spiritId;
     console.log(spiritId);
